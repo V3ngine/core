@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+
+{% block detail %}
+        <div class="conteiner">
+                <div class="row col-md-8">
+
+                        <h5>{{post.title}}</h5>
+                        {%if post.image%}
+                        <img src="{{post.image.url}}" alt="PICTURE">
+                        {%endif%}
+                        <p>{{post.message}}</p>
+                        <p>{{post.author}}</p>
+                        <b>{{post.pub_date}}</b>
+                        <div>-------</div>
+
+                        <a href="{% url 'gum:delete' post.id %}" class="btn btn-danger">Удалить статью</a>
+                        <a href="{% url 'gum:update' post.id %}" class="btn btn-warning mt-2">Обновить статью</a>
+                </div>
+        </div>
+        
+
+
+{% endblock %}

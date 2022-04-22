@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block all_posts %}
+
+    <div class="conteiner">
+        <div class="row">
+            <div class="col-md-10">
+
+                {% for post in all_posts %}
+                <h5>{{post.title}}</h3>
+                <p>{{post.author}}</p>
+                <b>{{post.pub_date}}</b>
+                <p><a href="{% url 'gum:detail' post.id %}" class="btn btn-primary">Подробнее</a></p>
+                <div>-------</div>
+                {% endfor %}
+            
+            </div>
+        </div>
+    </div>
+     
+{% endblock %}

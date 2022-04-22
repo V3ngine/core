@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block crud %}
+
+        <div class="conteiner d-flex">
+            <div class="row">
+                <div class="col-12">
+
+                    <form action=" "method="post" class="form-control">
+
+                        {{form.as_p}}
+                        {%csrf_token%}
+            
+                        <button type="submit" class="btn btn-success">Создать пост</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+       
+{%endblock%}
